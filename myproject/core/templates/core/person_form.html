@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}Person Form{% endblock title %}
+
+{% block content %}
+
+<div class="page-header">
+    <h2>Nuevo Contacto</h2>
+</div>
+
+<form class="form-horizontal" action="." method="POST">
+    {% csrf_token %}
+    {{ form.non_fields_errors }}
+    <div class="form-group">
+        <label class="control-label col-sm-2 col-lg-2">
+            {{ form.first_name.label }}
+        </label>
+        <div class="col-sm-4 col-lg-4">
+            {{ form.first_name|attr:"class:form-control" }} {{ form.first_name.errors }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 col-lg-2">
+            {{ form.last_name.label }}
+        </label>
+        <div class="col-sm-4 col-lg-4">
+            {{ form.last_name|attr:"class:form-control" }} {{ form.last_name.errors }}
+        </div>
+    </div>
+    <div class="form-group offset-2">
+        <label class="control-label col-sm-2 col-lg-2" for="id_fecha">
+            {{ form.birth_date.label }}
+        </label>
+        <div class="col-sm-4 col-lg-2 input-group">
+            {{ form.birth_date }} {{ form.birth_date.errors }}
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 col-lg-2">
+            {{ form.email.label }}
+        </label>
+        <div class="col-sm-4 col-lg-4">
+            {{ form.email|attr:"class:form-control" }} {{ form.email.errors }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 col-lg-2">
+            {{ form.address.label }}
+        </label>
+        <div class="col-sm-4 col-lg-4">
+            {{ form.address|attr:"class:form-control" }} {{ form.address.errors }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 col-lg-2">
+            {{ form.district.label }}
+        </label>
+        <div class="col-sm-4 col-lg-4">
+            {{ form.district|attr:"class:form-control" }} {{ form.district.errors }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 col-lg-2">
+            {{ form.city.label }}
+        </label>
+        <div class="col-sm-4 col-lg-4">
+            {{ form.city|attr:"class:form-control" }} {{ form.city.errors }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 col-lg-2">
+            {{ form.phone.label }}
+        </label>
+        <div class="col-sm-4 col-lg-4">
+            {{ form.phone|attr:"class:form-control" }} {{ form.phone.errors }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 col-lg-2">
+            {{ form.pase.label }}
+        </label>
+        <div class="col-sm-4 col-lg-4">
+            {{ form.pase|attr:"class:form-check-inpunt" }} {{ form.pase.errors }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 col-lg-2">
+            {{ form.consulta.label }}
+        </label>
+        <div class="col-sm-4 col-lg-4">
+            {{ form.consulta|attr:"class:form-check-inpunt" }} {{ form.consulta.errors }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 col-lg-2">
+            {{ form.aporte.label }}
+        </label>
+        <div class="col-sm-4 col-lg-2">
+            {{ form.aporte|attr:"class:form-control" }} {{ form.aporte.errors }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 col-lg-2">
+            {{ form.blocked.label }}
+        </label>
+        <div class="col-sm-4 col-lg-4">
+            {{ form.blocked }} {{ form.blocked.errors }}
+        </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-2 col-sm-offset-2">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </div>
+    </div>
+</form>
+{% endblock content %}

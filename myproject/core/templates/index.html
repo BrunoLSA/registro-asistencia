@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Centro Umbandista Reino da Mata</h1>
+        <p class="text-center">Bienvenidos a nuestro sistema de Registro de Asistencia !!!</p>
+        <hr class="my-4">
+        <div class="text-center">
+            <img src="{% static 'image/Logo_reino_da_mata.jpg' %}" style="width:300px;" alt="Logo"
+                 class="img-thumbnail rounded">
+        </div>
+        <a href="{% url 'core:person_add' %}">
+            <button id="new_customer" type="button" class="btn btn-primary">
+                <span class="glyphicon glyphicon-plus"></span> Ingrese Datos
+            </button>
+        </a>
+    </div>
+
+</div>
+{% endblock content %}
